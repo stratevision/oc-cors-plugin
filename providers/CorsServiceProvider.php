@@ -1,12 +1,12 @@
 <?php
 
-namespace RLuders\Cors\Providers;
+namespace Sv\Cors\Providers;
 
 use Config;
 use Asm89\Stack\CorsService;
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
-use RLuders\Cors\Models\Settings;
+use Sv\Cors\Models\Settings;
 
 class CorsServiceProvider extends BaseServiceProvider
 {

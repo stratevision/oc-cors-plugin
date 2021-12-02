@@ -1,11 +1,11 @@
 <?php
 
-namespace RLuders\Cors;
+namespace Sv\Cors;
 
 use Config;
 use System\Classes\PluginBase;
 use System\Classes\SettingsManager;
-use RLuders\Cors\Models\Settings as PluginSettings;
+use Sv\Cors\Models\Settings as PluginSettings;
 
 /**
  * CORS Plugin Information File.
@@ -25,8 +25,8 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'rluders.cors::lang.plugin.name',
-            'description' => 'rluders.cors::lang.plugin.description',
+            'name'        => 'sv.cors::lang.plugin.name',
+            'description' => 'sv.cors::lang.plugin.description',
             'author'      => 'Ricardo Lüders',
             'icon'        => 'icon-exchange',
         ];
@@ -41,13 +41,13 @@ class Plugin extends PluginBase
     {
         return [
             'settings' => [
-                'label'       => 'rluders.cors::lang.settings.menu_label',
-                'description' => 'rluders.cors::lang.settings.menu_description',
+                'label'       => 'sv.cors::lang.settings.menu_label',
+                'description' => 'sv.cors::lang.settings.menu_description',
                 'category'    => SettingsManager::CATEGORY_MISC,
                 'icon'        => 'icon-exchange',
-                'class'       => 'RLuders\Cors\Models\Settings',
+                'class'       => 'Sv\Cors\Models\Settings',
                 'order'       => 600,
-                'permissions' => ['rluders.cors.access_settings'],
+                'permissions' => ['sv.cors.access_settings'],
             ]
         ];
     }
@@ -60,9 +60,9 @@ class Plugin extends PluginBase
     public function registerPermissions()
     {
         return [
-            'rluders.cors.access_settings' => [
-                'tab' => 'rluders.cors::lang.plugin.name',
-                'label' => 'rluders.cors::lang.permissions.settings'
+            'sv.cors.access_settings' => [
+                'tab' => 'sv.cors::lang.plugin.name',
+                'label' => 'sv.cors::lang.permissions.settings'
             ]
         ];
     }
@@ -74,7 +74,7 @@ class Plugin extends PluginBase
      */
     public function register()
     {
-        $this->app->register(\RLuders\Cors\Providers\CorsServiceProvider::class);
+        $this->app->register(\Sv\Cors\Providers\CorsServiceProvider::class);
         $this->app['router']->middleware('cors', \Fruitcake\Cors\HandleCors::class);
         $this->app['router']->prependMiddlewareToGroup('api', \Fruitcake\Cors\HandleCors::class);
     }

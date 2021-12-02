@@ -1,5 +1,5 @@
 {
-  "name": "rluders/cors",
+  "name": "sv/cors-plugin",
   "type": "october-plugin",
   "description": "CORS plugin for OctoberCMS",
   "keywords": [
@@ -22,7 +22,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "RLuders\\Cors\\": ""
+      "Sv\\Cors\\": ""
     }
   },
   "require": {
