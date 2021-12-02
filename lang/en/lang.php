@@ -2,7 +2,7 @@
 
 return [
     'plugin' => [
-        'name' => 'CORS',
+        'name' => 'PLUS CORS',
         'description' => 'Cross-Origin Resource Sharing.',
     ],
     'permissions' => [
