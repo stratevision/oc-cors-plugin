@@ -23,7 +23,7 @@ fields:
         span: left
         label: sv.cors::lang.settings.fields.allowedOrigins.label
         comment: sv.cors::lang.settings.fields.allowedOrigins.comment
-        type: taglist
+        #type: taglist
         separator: space
 
     allowedHeaders:
@@ -37,7 +37,7 @@ fields:
         span: left
         label: sv.cors::lang.settings.fields.allowedMethods.label
         comment: sv.cors::lang.settings.fields.allowedMethods.comment
-        type: taglist
+        #type: taglist
         separator: space
 
     exposedHeaders:

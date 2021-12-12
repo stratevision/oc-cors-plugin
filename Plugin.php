@@ -74,8 +74,9 @@ class Plugin extends PluginBase
      */
     public function register()
     {
-        $this->app->register(\Sv\Cors\Providers\CorsServiceProvider::class);
-        $this->app['router']->middleware('cors', \Fruitcake\Cors\HandleCors::class);
-        $this->app['router']->prependMiddlewareToGroup('api', \Fruitcake\Cors\HandleCors::class);
+        // todo-me, consider the usage in sv/api/Plugin.php
+        //$this->app->register(\Sv\Cors\Providers\CorsServiceProvider::class);
+        //$this->app['router']->middleware('cors', \Fruitcake\Cors\HandleCors::class);
+        //$this->app['router']->prependMiddlewareToGroup('api', \Fruitcake\Cors\HandleCors::class);
     }
 }
