@@ -61,7 +61,7 @@ class Plugin extends PluginBase
     {
         return [
             'sv.cors.access_settings' => [
-                'tab' => 'sv.cors::lang.plugin.name',
+                'tab'   => 'sv.cors::lang.plugin.name',
                 'label' => 'sv.cors::lang.permissions.settings'
             ]
         ];
@@ -74,9 +74,8 @@ class Plugin extends PluginBase
      */
     public function register()
     {
-        // todo-me, consider the usage in sv/api/Plugin.php
-        //$this->app->register(\Sv\Cors\Providers\CorsServiceProvider::class);
-        //$this->app['router']->middleware('cors', \Fruitcake\Cors\HandleCors::class);
-        //$this->app['router']->prependMiddlewareToGroup('api', \Fruitcake\Cors\HandleCors::class);
+        $this->app->register(\Sv\Cors\Providers\CorsServiceProvider::class);
+        $this->app['router']->middleware('cors', \Fruitcake\Cors\HandleCors::class);
+        $this->app['router']->prependMiddlewareToGroup('api', \Fruitcake\Cors\HandleCors::class);
     }
 }
